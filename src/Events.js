@@ -26,7 +26,7 @@ class Events extends React.Component {
 function Event(props) {
   return (
     <div className="event">
-      <button onClick={registerForEvent}>
+      <button onClick={registerForEvent(props.key)}>
         <div className="eventTopic">{props.topic}</div>
         <div className="eventStart">{props.startTime}</div>
         <div className="eventEnd">{props.endTime}</div>

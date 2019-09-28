@@ -30,6 +30,7 @@ class EventList extends React.Component {
             topic={e.topic}
             startTime={e.startTime}
             endTime={e.endTime}
+            key={e.key}
           />
         )}
       </div>

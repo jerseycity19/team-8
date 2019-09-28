@@ -68,7 +68,6 @@ class App extends React.Component {
           Global Nomads Group connects youth from around
           the world to engage across lines of difference.
         </h2>
-
         {isLoggedIn ?
           (
             <>
@@ -130,6 +129,7 @@ class App extends React.Component {
               </>
           )}
       </div>
+      
     );
   }
 }

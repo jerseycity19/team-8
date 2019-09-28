@@ -50,18 +50,6 @@ class App extends React.Component {
 
   render() {
     const { isLoggedIn } = this.state;
-    const particleOpt = {
-      particles: {
-        number: {
-          value: 150,
-          density: {
-            enable: true,
-            value_area: 800
-  
-          }
-        }
-      }
-    }
     return (
       <div className="App">
         <img src="/images/1.jpg" alt=""/>
@@ -92,7 +80,7 @@ class App extends React.Component {
           Free Tables (No Set Topic):
         </h5>
         <h6>
-          Plan your own Table Talk!
+          Create Your Own Table!
         </h6>
         {isLoggedIn ?
           (<EventList firebase={firebase} />)
@@ -103,6 +91,7 @@ class App extends React.Component {
         )
         }
       </div>
+
     );
   }
 }

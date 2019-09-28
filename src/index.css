@@ -6,6 +6,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+button {
+  background: #34495e;
+  border: 0;
+  color: #fff;
+  display: block;
+  width: 50%;
+  margin: 0 auto 20px;
+  border-radius: 4px;
+  padding: 0;
+  line-height: 40px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

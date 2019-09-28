@@ -3,7 +3,7 @@ import firebase from "./firebaseApp";
 import "firebase/auth";
 import './App.css';
 import './index.css';
-import Background from 'C://workspace/team-8/src/23671a8f18eb758584bca1ca09ed3e7f.png'
+
 
 
 import EventList from './EventList';

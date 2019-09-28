@@ -30,7 +30,6 @@ class EventList extends React.Component {
       <div>
         {events.map((e, i) =>
           <EventItem
-            key={i}
             topic={e.topic}
             startTime={e.startTime}
             endTime={e.endTime}
@@ -40,6 +39,8 @@ class EventList extends React.Component {
       </div>
     )
   }
+
+  
 }
 
 export default EventList;

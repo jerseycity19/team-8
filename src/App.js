@@ -4,13 +4,10 @@ import "firebase/auth";
 import './App.css';
 import './index.css';
 import EventList from './EventList';
-import Particles from 'react-particles-js';
+import { Button } from 'semantic-ui-react'
 
-const buttonTwo = {
-  backgroundColor: '#514684',
-  background: 'groove',
-  fontColor: 'black',
-};
+
+
 
 class App extends React.Component {
   constructor(props) {
@@ -43,27 +40,26 @@ class App extends React.Component {
   handleOnClick() {
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithRedirect(provider);
+    firebase.auth().getRedirectResult().then(function(result) {
+      if (result.credential) {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        var token = result.credential.accessToken;
+        // ...
+      }
+      // The signed-in user info.
+      var user = result.user;
+      console.log("user: " + user);
+    })
   }
 
   eventOnClick() {
     // TO BE CODED ONCE EVENTS ARE MADE
   }
+  
 
 
   render() {
     const { isLoggedIn } = this.state;
-    const particleOpt = {
-      particles: {
-        number: {
-          value: 150,
-          density: {
-            enable: true,
-            value_area: 800
-  
-          }
-        }
-      }
-    }
     return (
       <div className="App">
         <img src="/images/1.jpg" alt=""/>
@@ -72,22 +68,21 @@ class App extends React.Component {
           Global Nomads Group connects youth from around
           the world to engage across lines of difference.
         </h2>
-        <button onClick={this.handleOnClick}>
+        <button class="ui button" onClick={this.handleOnClick}>
           Log in
         </button>
         <h3>
           Upcoming and Current Tables:
         </h3>
-        <button style={buttonTwo} onClick={this.eventOnClick}>
-          <p>Table Talk September 28th 2pm </p> 
+        <button class="ui purple button">{this.eventOnClick} Table Talk<p></p>September 28th 2pm <p></p>  <p>Free Table</p>
         </button>
-        <button style={buttonTwo} onClick={this.eventOnClick}>
-          Table Talk September 30th 11am <p></p> TOPIC: <p></p> Climate Change Around the World
+        <button class="ui purple button">{this.eventOnClick}
+          Table Talk <p></p> September 30th 11am <p></p> <p></p> Climate Change
         </button>
         <h4>
           Topic-Specific Tables:
         </h4>
-        <button style={buttonTwo} onClick={this.eventOnClick}>
+        <button class="ui purple button">{this.eventOnClick}
           Table Talk October 11th 11am
           <p></p> TOPIC: <p></p> Giving to the Community
         </button>
@@ -95,7 +90,7 @@ class App extends React.Component {
           Free Tables (No Set Topic):
         </h5>
         <h6>
-          Plan your own Table Talk!
+          Create Your Own Table!
         </h6>
         {isLoggedIn ?
           (<EventList firebase={firebase} />)
@@ -106,6 +101,7 @@ class App extends React.Component {
         )
         }
       </div>
+
     );
   }
 }

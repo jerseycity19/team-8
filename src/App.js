@@ -8,8 +8,26 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: {},
       isLoggedIn: false,
     }
+  }
+
+  componentDidMount() {
+    firebase.auth().getRedirectResult().then(function(result) {
+    if (result.credential) {
+      let token = result.credential.accessToken;
+      console.log(token);
+      this.setState({ isLoggedIn: true })
+    }
+    let user = result.user;
+    this.setState({ user });
+    }).catch(function(error) {
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      let email = error.email;
+      let credential = error.credential;
+    });
   }
 
   handleOnClick() {

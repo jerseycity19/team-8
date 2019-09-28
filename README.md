@@ -5,7 +5,10 @@
 - design
 
 # IN PROGRESS
-
+- firebase user ID
+- webcam verification
+- event dates
+- event buttons
 # COMPLETED
 - Firebase 
 - Header

@@ -22,15 +22,19 @@ class EventList extends React.Component {
   }
 
   registerForEvent(e, uid) {
+    console.log("here");
     let { firebase } = this.props;
-    let ref = firebase.database().ref("/focusedEvents/" + `${e.target.id}` + "/members");
+    let ref = firebase.database().ref("/focusedEvents/event2/members");
     ref.on("value", function(snapshot) {
       let members = {};
       members = snapshot.val();
       console.log('members', members);
-      members[uid] = uid;
+      members["slampota"] = "slampota@usc.edu";
       var updates = {members};
-      firebase.database().ref('/focusedEvents/' + `${e.target.id}`).update(updates);
+      firebase.database().ref("/focusedEvents/event2").update(updates);
+      var attendees = Object.values([snapshot.val()]);
+      console.log(attendees);
+      return attendees;
     });
   }
 
@@ -51,6 +55,8 @@ class EventList extends React.Component {
       </div>
     )
   }
+
+  
 }
 
 export default EventList;

@@ -28,7 +28,10 @@
 }
 
 button{
-  color: black;
+  background: #466890;
+  border-radius: 8px;
+  color: white;
+  margin: auto;
 }
 
 

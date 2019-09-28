@@ -54,5 +54,19 @@ registerForEvent(uid, eid) {
   });
 }
 
+if (result.credential) {
+  var token = result.credential.accessToken;
+  var user = result.user;
+
+  var users;
+  let ref = firebase.database().ref("/users");
+  ref.on("value", function(snapshot) {
+    users = snapshot.val();
+    users[user.email] = user.email;
+    var updates = {users};
+    firebase.database().ref().update(updates);
+  });
+};
+
 
 export default Events;

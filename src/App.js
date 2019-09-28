@@ -4,8 +4,7 @@ import "firebase/auth";
 import './App.css';
 import './index.css';
 import EventList from './EventList';
-// import Particles from 'react-particles-js';
-
+import Verify from './Verify';
 
 const buttonTwo = {
   backgroundColor: '#627BAF',
@@ -67,6 +66,11 @@ class App extends React.Component {
     // }
     return (
       <div className="App">
+        {isLoggedIn ?
+          (
+          <>
+          <EventList firebase={firebase} />
+          <img src="/images/1.jpg" alt=""/>
         {/* <Particles
             params={particleOpt}
         /> */}
@@ -101,12 +105,15 @@ class App extends React.Component {
         <h6>
           Plan your own Table Talk!
         </h6>
-        {isLoggedIn ?
-          (<EventList firebase={firebase} />)
+          </>
+          )
         : (
-          <button onClick={this.handleOnClick}>
-            Log in
-          </button>
+          <>
+            <Verify />
+            <button onClick={this.handleOnClick}>
+              Log in
+            </button>
+          </>
         )
         }
       </div>

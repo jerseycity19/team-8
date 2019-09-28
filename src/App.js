@@ -4,6 +4,8 @@ import "firebase/auth";
 import './App.css';
 import './index.css';
 
+import EventList from './EventList';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -46,11 +48,14 @@ class App extends React.Component {
           Global Nomads Group connects youth from around
           the world to engage across lines of difference.
         </h2>
-        <div>
+        {isLoggedIn ?
+          (<EventList firebase={firebase} />)
+        : (
           <button onClick={this.handleOnClick}>
             Log in
           </button>
-        </div>
+        )
+        }
       </div>
 
     );

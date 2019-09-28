@@ -20,6 +20,10 @@ class EventList extends React.Component {
     })
   }
 
+  handleOnClick() {
+    console.log('click!');
+  }
+
   render() {
     const { events } = this.state;
     return(
@@ -30,6 +34,7 @@ class EventList extends React.Component {
             topic={e.topic}
             startTime={e.startTime}
             endTime={e.endTime}
+            onClick={this.handleOnClick}
           />
         )}
       </div>

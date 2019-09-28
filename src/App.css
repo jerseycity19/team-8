@@ -4,6 +4,9 @@
   border: mediumblue groove;
 }
 
+.missionStatement {
+  text-align: center;
+}
 
 .App-logo {
   height: 40vmin;

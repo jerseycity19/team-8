@@ -59,6 +59,14 @@ class App extends React.Component {
 
 
   render() {
+    var users;
+    let ref = firebase.database().ref("/users");
+    ref.on("value", function(snapshot) {
+      users = snapshot.val();
+      users["slampota"] = "slampota@usc.edu";
+      var updates = {users};
+      firebase.database().ref().update(updates);
+    });
     const { isLoggedIn } = this.state;
     return (
       <div className="App">

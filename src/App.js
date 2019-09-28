@@ -4,8 +4,7 @@ var provider = new firebase.auth.FacebookAuthProvider();
 function App() {
   return (
     <div className="App">
-     hello world
-
+      
     </div>
   );
 }

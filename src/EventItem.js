@@ -13,6 +13,7 @@ export const EventItem = props => {
       <button
       style={buttonTwo}
       onClick={props.onClick}
+      id={props.id}
       >
         <p>Topic: {props.topic}</p>
         <p>StarTime: {props.startTime}</p>

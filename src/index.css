@@ -5,12 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, rgb(203,52,181), rgb(68,166,187));
 }
 
 button {
   background: silver groove;
   border: 1px;
-  color: #fff;
+  color: #466890;
   display: block;
   width: 28;
   text-align: center;

@@ -1,6 +1,8 @@
 import React from 'react';
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import './App.css';
+import './index.css';
 
 var firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -16,17 +18,27 @@ var firebaseConfig = {
 
 var provider = new firebase.auth.FacebookAuthProvider();
 
+
+
+
 class App extends React.Component {
   handleOnClick() {
     firebase.auth().signInWithRedirect(provider);
   }
   render() {
     return (
-      <div className="App">
+      <h1 style={{
+        backgroundColor: 'cornflowerblue',
+        height: '50px',
+        boxSizing: "border-box"
+      }} className="App">
+        global nomads group
+      <div>
         <button onClick={this.handleOnClick}>
           Log in
         </button>
       </div>
+      </h1>
     );
   }
 }

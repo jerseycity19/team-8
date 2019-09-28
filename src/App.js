@@ -4,6 +4,7 @@ import "firebase/auth";
 import './App.css';
 import './index.css';
 import EventList from './EventList';
+import Verify from './Verify';
 
 const buttonTwo = {
   backgroundColor: 'lavender',
@@ -54,7 +55,11 @@ class App extends React.Component {
     const { isLoggedIn } = this.state;
     return (
       <div className="App">
-        <img src="/images/1.jpg" alt=""/>
+        {isLoggedIn ?
+          (
+          <>
+          <EventList firebase={firebase} />
+          <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">
           Global Nomads Group connects youth from around
@@ -85,12 +90,15 @@ class App extends React.Component {
         <h6>
           Create Your Own Table!
         </h6>
-        {isLoggedIn ?
-          (<EventList firebase={firebase} />)
+          </>
+          )
         : (
-          <button onClick={this.handleOnClick}>
-            Log in
-          </button>
+          <>
+            <Verify />
+            <button onClick={this.handleOnClick}>
+              Log in
+            </button>
+          </>
         )
         }
       </div>

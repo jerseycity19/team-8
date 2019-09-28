@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "clarifai": "^2.9.1",
     "firebase": "^7.0.0",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
-    "react-scripts": "3.1.2"
+    "react-scripts": "3.1.2",
+    "react-webcam": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

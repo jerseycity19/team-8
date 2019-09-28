@@ -5,12 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, rgb(203,52,181), rgb(68,166,187));
 }
 
 button {
-  background: silver groove;
+  background: #466890;
   border: 1px;
-  color: #fff;
+  color: whitesmoke;
   display: block;
   width: 28;
   text-align: center;
@@ -88,6 +89,10 @@ h6 {
   font-size: 15px;
   background: groove;
   background-color: #978AD1;
+  margin: 2.5%;
+
+}
+img {
   margin: 2.5%;
 
 }

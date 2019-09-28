@@ -79,11 +79,19 @@ class App extends React.Component {
         <h5>
           Free Tables (No Set Topic):
         </h5>
+        {isLoggedIn ?
+          (<EventList firebase={firebase} />) // HERE.
+        : (
+          <button onClick={this.handleOnClick}>
+            Log in
+          </button>
+        )
+        }
         <h6>
           Create Your Own Table!
         </h6>
         {isLoggedIn ?
-          (<EventList firebase={firebase} />)
+          (<EventList firebase={firebase} />) // HERE.
         : (
           <button onClick={this.handleOnClick}>
             Log in

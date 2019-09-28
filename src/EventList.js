@@ -45,6 +45,7 @@ class EventList extends React.Component {
     var updates = {members};
     firebase.database().ref('/focusedEvents/' + eid).update(updates);
   });
+  
 }
 }
 

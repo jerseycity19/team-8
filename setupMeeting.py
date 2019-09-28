@@ -2,6 +2,8 @@ import smtplib
 import requests
 import yaml
 import sys
+import re
+
 
 def sendMail(meeting_url, usersList):
     server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -11,7 +13,7 @@ def sendMail(meeting_url, usersList):
 
     email = ''
     password = ''
-    with open('creds.txt' ) as f:
+    with open('creds.txt') as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
         email = data['email']
         password = data['password']
@@ -23,17 +25,22 @@ def sendMail(meeting_url, usersList):
 
     msg = f"Subject: {subject}\n\n{body}"
 
+    regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+
     for user in usersList:
-        server.sendmail(email, user, msg)
+        if(re.search(regex, user)):
+            server.sendmail(email, user, msg)
+        else:
+            raise Exception("Invalid email address.")
 
     server.quit()
 
+
 def createMeeting():
     auth_token = ''
-    with open('creds.txt' ) as f:
+    with open('creds.txt') as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
         auth_token = data['auth_token']
-
 
     hed = {'Authorization': 'Bearer ' + auth_token}
     userId = "r7INH_CWTimJmjFRUxQLog"
@@ -57,6 +64,7 @@ def createMeeting():
 
     return join_url
 
+
 if __name__ == "__main__":
     emails = sys.argv[1].split(",")
-    sendMail(createMeeting(),emails)
+    sendMail(createMeeting(), emails)

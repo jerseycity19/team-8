@@ -7,15 +7,17 @@ const buttonTwo = {
   fontColor: 'black',
 };
 
-
 export const EventItem = props => {
   return(
-      <div>
-      <button style={buttonTwo}>
-      <p>Topic: {props.topic}</p>
-      <p>StarTime: {props.startTime}</p>
-      <p>endTime: {props.endTime}</p>
+    <>
+      <button
+      style={buttonTwo}
+      onClick={props.onClick}
+      >
+        <p>Topic: {props.topic}</p>
+        <p>StarTime: {props.startTime}</p>
+        <p>endTime: {props.endTime}</p>
       </button>
-    </div>
+    </>
   )
 };

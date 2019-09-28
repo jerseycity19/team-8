@@ -5,8 +5,7 @@ import './App.css';
 import './index.css';
 import EventList from './EventList';
 import { Button } from 'semantic-ui-react'
-
-
+import Verify from './Verify';
 
 
 class App extends React.Component {
@@ -62,6 +61,14 @@ class App extends React.Component {
     const { isLoggedIn } = this.state;
     return (
       <div className="App">
+        {isLoggedIn ?
+          (
+          <>
+          <EventList firebase={firebase} />
+          <img src="/images/1.jpg" alt=""/>
+        {/* <Particles
+            params={particleOpt}
+        /> */}
         <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">
@@ -102,12 +109,15 @@ class App extends React.Component {
         <h6>
           Create Your Own Table!
         </h6>
-        {isLoggedIn ?
-          (<EventList firebase={firebase} />) // HERE.
+          </>
+          )
         : (
-          <button onClick={this.handleOnClick}>
-            Log in
-          </button>
+          <>
+            <Verify />
+            <button onClick={this.handleOnClick}>
+              Log in
+            </button>
+          </>
         )
         }
       </div>

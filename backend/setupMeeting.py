@@ -3,6 +3,8 @@ import requests
 import yaml
 import sys
 import re
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 
 def sendMail(meeting_url, usersList):
@@ -11,25 +13,57 @@ def sendMail(meeting_url, usersList):
     server.starttls()
     server.ehlo()
 
-    email = ''
+    email_address = ''
     password = ''
     with open('creds.txt') as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
-        email = data['email']
+        email_address = data['email_address']
         password = data['password']
 
-    server.login(email, password)
+    server.login(email_address, password)
 
-    subject = 'Zoom Invitation Link'
-    body = 'Click on the following link to join ' + meeting_url
+    # subject = 'Zoom Invitation Link'
+    # body = 'Click on the following link to join the meeting: ' + meeting_url
 
-    msg = f"Subject: {subject}\n\n{body}"
+    # msg = f"Subject: {subject}\n\n{body}"
+
+    text = """\
+    Hi,
+    How are you?
+    Here is your Zoom meeting link: """ + meeting_url
+
+    html = """\
+    <html><center>
+    <div>
+    <img src="https://pbs.twimg.com/profile_images/2027772417/gng_texture_blue_180x180_400x400.gif" style="width:250px;height:250px;"
+    <br>
+    </div>
+    <head><strong>Zoom Meeting Invitation</strong></head>
+    <body>
+        <p>Thank you for signing up for a Zoom meeting!<br>
+        Please join the meeting at the link below.
+        <br><br><h1>{meeting_url}</h1><br>
+        </p>
+    </body>
+    </html>
+    """.format(meeting_url=meeting_url)
+
+    message = MIMEMultipart("alternative")
+    message["Subject"] = "Zoom Invitation Link"
+    message["From"] = email_address
+
+    part1 = MIMEText(text, "plain")
+    part2 = MIMEText(html, "html")
+
+    message.attach(part1)
+    message.attach(part2)
 
     regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
 
     for user in usersList:
+        message["To"] = user
         if(re.search(regex, user)):
-            server.sendmail(email, user, msg)
+            server.sendmail(email_address, user, message.as_string())
         else:
             raise Exception("Invalid email address.")
 

@@ -5,19 +5,30 @@ class Events extends React.Component {
     super(props);
     this.state = {
       events: [],
-// ref.once("value")
-//   .then(function(snapshot) {
-//     var key = snapshot.key; // "ada"
-//     var childKey = snapshot.child("name/last").key; // "last"
-//   });
     }
+  }
+
+  getEvents() {
+    let eventref = firebase.database().ref("focusedEvents");
+    eventref.on("value", function(snapshot)
+    {
+      return snapshot.val();
+    });
   }
 
   componentDidMounts() {
   	this.setState({
-  		events: firebase.database().ref("focusedEvents"),
+  		events: this.getEvents(),
   	});
   }
+}
+
+function EventList(props) {
+  return (
+    <div>
+      {this.state.events.map(e => <Event topic={e.topic} startTime={e.startTime} endTime={e.endTime}/>)}
+    </div>
+  );
 }
 
 export default Events;

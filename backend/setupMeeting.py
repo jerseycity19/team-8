@@ -4,6 +4,8 @@ import yaml
 import sys
 import re
 
+# test
+
 
 def sendMail(meeting_url, usersList):
     server = smtplib.SMTP('smtp.gmail.com', 587)

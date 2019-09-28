@@ -1,6 +1,9 @@
+
 .App {
   text-align: center;
+  border: mediumblue groove;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -14,9 +17,13 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: skyblue;
+  color: light-blue;
+  border: solid;
 }
+
+
 
 .App-link {
   color: blue;
 }
+

@@ -17,21 +17,30 @@ class App extends React.Component {
     firebase.auth().signInWithRedirect(provider);
   }
 
+
   render() {
     return (
-      <h1 className="App">
-        GLOBAL NOMADS GROUP
-        <h2 
-        className="missionStatement">
-        Global Nomads Group connects youth from around 
+      <div>
+        <h1 className="App">
+          GLOBAL NOMADS GROUP"
+        </h1>
+        <h2 className="missionStatement">
+          Global Nomads Group connects youth from around 
         the world to engage across lines of difference.
         </h2>
-      <div>
         <button onClick={this.handleOnClick}>
           Log in
         </button>
+        <h3>
+          Upcoming and Current Tables:
+        </h3>
+        <h4>
+          Topic-Specific Tables:
+        </h4>
+        <h5>
+          Free Tables (No Set Topic):
+        </h5>
       </div>
-      </h1>
     );
   }
 }

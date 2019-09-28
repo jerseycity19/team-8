@@ -32,12 +32,36 @@ h1 {
   background: groove;
   border-radius: 5px;
   background-color: whitesmoke;
-  margin: 15px;
-  height: 70px;
+  margin: 15;
+  height: 70;
   font-family: bookman old style;
+  padding: 20px;
+  margin-bottom: 5;
 }
 
 h2 {
   font-size: 10px;
-  padding: -20px;
+  margin-top: -45px;
+
+}
+
+h3 {
+  border: cornflowerblue groove;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 15px;
+}
+
+h4 {
+  border: cornflowerblue groove;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 15px;
+}
+
+h5 {
+  border: cornflowerblue groove;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 15px;
 }

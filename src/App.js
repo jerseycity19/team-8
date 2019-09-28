@@ -14,14 +14,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    let _this = this;
     firebase.auth().getRedirectResult().then(function(result) {
     if (result.credential) {
       let token = result.credential.accessToken;
-      console.log(token);
-      this.setState({ isLoggedIn: true })
     }
     let user = result.user;
-    this.setState({ user });
+    _this.setState({
+      user,
+      isLoggedIn: true
+    });
     }).catch(function(error) {
       let errorCode = error.code;
       let errorMessage = error.message;
@@ -36,6 +38,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { isLoggedIn } = this.state;
     return (
       <div className="App">
         <h1>GLOBAL NOMADS GROUP</h1>

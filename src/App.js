@@ -72,7 +72,7 @@ class App extends React.Component {
         {isLoggedIn ?
           (
             <>
-            
+
               <ul> Your Future Tables:
                 <li>Table Talk September 30th 11 am
                   <p>
@@ -118,7 +118,6 @@ class App extends React.Component {
                 <p>Table Talk</p><p>September 28th 2pm</p> <p>Free Table</p>
               </button>
               <p></p>
-            <h7> </h7>
             </>
           ) : (
               <>

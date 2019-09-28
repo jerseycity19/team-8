@@ -30,9 +30,9 @@ code {
 
 /* header */
 h1 {
-  color: cornflowerblue;
+  color: #466890;
   background: groove;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: whitesmoke;
   margin: 15;
   height: 70;
@@ -50,44 +50,44 @@ h2 {
 }
 
 h3 {
-  border: cornflowerblue groove;
+  border:#466890 groove;
   padding: 5px;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 15px;
   background: groove;
-  background-color:whitesmoke;
+  background-color: #8AA2C1;
   margin: 2.5%;
 }
 
 h4 {
-  border: cornflowerblue groove;
+  border:#466890 groove;
   padding: 5px;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 15px;
   background: groove;
-  background-color: whitesmoke;
+  background-color: #8AA2C1;
   margin: 2.5%;
 
 }
 
 h5 {
-  border: cornflowerblue groove;
+  border:#466890 groove;
   padding: 5px;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 15px;
   background: groove;
-  background-color: whitesmoke;
+  background-color: #8AA2C1;
   margin: 2.5%;
 
 }
 
 h6 {
-  border: cornflowerblue groove;
+  border:#466890 groove;
   padding: 5px;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 15px;
   background: groove;
-  background-color: whitesmoke;
+  background-color: #8AA2C1;
   margin: 2.5%;
 
 }

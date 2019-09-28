@@ -47,7 +47,16 @@ h2 {
   margin-top: -2%;
   background: groove;
 
+}
 
+ul{
+  width: 20%;
+  border: groove purple;
+  list-style-type: none;
+  text-align: left;
+  font-family: monospace;
+  margin: 15px;
+  
 }
 
 h3 {

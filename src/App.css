@@ -4,6 +4,7 @@
   border: floralwhite groove;
   width: 100%;
   height: 100%;
+  background: linear-gradient(to right, rgb(203,52,181), rgb(68, 166, 187));
 }
 
 .missionStatement {
@@ -34,4 +35,3 @@ button{
 .App-link {
   color: blue;
 }
-

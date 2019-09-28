@@ -7,6 +7,8 @@ import EventList from './EventList';
 import { Button } from 'semantic-ui-react';
 import Verify from './Verify';
 
+// <EventList firebase={firebase} />
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -70,8 +72,8 @@ class App extends React.Component {
         {isLoggedIn ?
           (
             <>
-              <EventList firebase={firebase} />
-              <ul> Future RSVP'd Tables:
+
+              <ul> Your Future Tables:
                 <li>Table Talk September 30th 11 am
                   <p>
                     Climate Change
@@ -90,7 +92,7 @@ class App extends React.Component {
                 className="ui purple button"
                 onClick={this.eventOnClick}
               >
-                <p>Table Talk</p><p>September 28th 2pm</p> <p>Free Table</p>
+                Table Talk<p></p>September 28th 2pm<p></p> <p></p>Free Table
               </button>
 
               <button className="ui purple button" onClick={this.eventOnClick}>
@@ -109,14 +111,22 @@ class App extends React.Component {
               <h5>
                 Free Tables (No Set Topic):
               </h5>
+              <button
+                className="ui purple button"
+                onClick={this.eventOnClick}
+              >
+                <p>Table Talk</p><p>September 28th 2pm</p> <p>Free Table</p>
+              </button>
+              <p></p>
             </>
           ) : (
-                <>
-                  <Verify />
-                  <button onClick={this.handleOnClick}>
-                    Log in
-                  </button>
-                </>
+              <>
+                <Verify />
+                <button onClick={this.handleOnClick}>
+                 Log in
+                </button>
+                <p></p>
+              </>
           )}
       </div>
     );

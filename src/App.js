@@ -7,10 +7,9 @@ import EventList from './EventList';
 import Verify from './Verify';
 
 const buttonTwo = {
-  backgroundColor: 'lavender',
+  backgroundColor: '#627BAF',
   background: 'groove',
-  fontColor: 'black'
-
+  fontColor: 'black',
 };
 
 class App extends React.Component {
@@ -53,6 +52,18 @@ class App extends React.Component {
 
   render() {
     const { isLoggedIn } = this.state;
+    // const particleOpt = {
+    //   particles: {
+    //     number: {
+    //       value: 150,
+    //       density: {
+    //         enable: true,
+    //         value_area: 800
+  
+    //       }
+    //     }
+    //   }
+    // }
     return (
       <div className="App">
         {isLoggedIn ?
@@ -60,6 +71,10 @@ class App extends React.Component {
           <>
           <EventList firebase={firebase} />
           <img src="/images/1.jpg" alt=""/>
+        {/* <Particles
+            params={particleOpt}
+        /> */}
+        <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">
           Global Nomads Group connects youth from around
@@ -72,7 +87,7 @@ class App extends React.Component {
           Upcoming and Current Tables:
         </h3>
         <button style={buttonTwo} onClick={this.eventOnClick}>
-          Table Talk September 29th 3pm <p></p> RSVP now!
+          <p>Table Talk September 28th 2pm </p> 
         </button>
         <button style={buttonTwo} onClick={this.eventOnClick}>
           Table Talk September 30th 11am <p></p> TOPIC: <p></p> Climate Change Around the World
@@ -88,7 +103,7 @@ class App extends React.Component {
           Free Tables (No Set Topic):
         </h5>
         <h6>
-          Create Your Own Table!
+          Plan your own Table Talk!
         </h6>
           </>
           )
@@ -102,7 +117,6 @@ class App extends React.Component {
         )
         }
       </div>
-
     );
   }
 }

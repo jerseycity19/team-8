@@ -8,7 +8,8 @@
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "react-scripts": "3.1.2",
-    "react-webcam": "^3.1.0"
+    "react-webcam": "^3.1.0",
+    "react-particles-js": "^2.7.0"
   },
   "scripts": {
     "start": "react-scripts start",

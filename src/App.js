@@ -66,9 +66,6 @@ class App extends React.Component {
     }
     return (
       <div className="App">
-      <Particles
-                params= {particleOpt}
-                />
         <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">

@@ -36,16 +36,7 @@ class EventList extends React.Component {
     )
   }
 
-  registerForEvent(uid, eid) {
-  var members;
-  let ref = firebase.database().ref("/focusedEvents/" + eid + "/members");
-  ref.on("value", function(snapshot) {
-    members = snapshot.val();
-    members[uid] = uid;
-    var updates = {members};
-    firebase.database().ref('/focusedEvents/' + eid).update(updates);
-  });
-}
+  
 }
 
 export default EventList;

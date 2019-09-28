@@ -1,6 +1,5 @@
 # team-8
 # new tasks
-please update your tasks guys !!
 # BACKLOG
 - setting email script
 - design
@@ -8,3 +7,8 @@ please update your tasks guys !!
 # IN PROGRESS
 
 # COMPLETED
+- Firebase 
+- Header
+- Zoom link
+- Events flow
+- Login authentication

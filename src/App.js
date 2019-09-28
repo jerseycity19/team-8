@@ -3,6 +3,8 @@ import firebase from "./firebaseApp";
 import "firebase/auth";
 import './App.css';
 import './index.css';
+import Background from 'C://workspace/team-8/src/23671a8f18eb758584bca1ca09ed3e7f.png'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +24,7 @@ class App extends React.Component {
     return (
       <div>
         <h1 className="App">
-          GLOBAL NOMADS GROUP"
+          GLOBAL NOMADS GROUP
         </h1>
         <h2 className="missionStatement">
           Global Nomads Group connects youth from around 
@@ -40,6 +42,9 @@ class App extends React.Component {
         <h5>
           Free Tables (No Set Topic):
         </h5>
+        <h6>
+          Create Your Own Table!
+        </h6>
       </div>
     );
   }

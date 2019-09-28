@@ -65,3 +65,10 @@ h5 {
   border-radius: 2px;
   font-size: 15px;
 }
+
+h6 {
+  border: cornflowerblue groove;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 15px;
+}

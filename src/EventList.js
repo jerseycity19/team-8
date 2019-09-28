@@ -7,6 +7,7 @@ class EventList extends React.Component {
     this.state = {
       events: [],
     }
+    this.registerForEvent = this.registerForEvent.bind(this);
   }
 
   componentDidMount() {
@@ -20,8 +21,21 @@ class EventList extends React.Component {
     })
   }
 
-  handleOnClick() {
-    console.log('click!');
+  registerForEvent(e, uid) {
+    console.log("here");
+    let { firebase } = this.props;
+    let ref = firebase.database().ref("/focusedEvents/event2/members");
+    ref.on("value", function(snapshot) {
+      let members = {};
+      members = snapshot.val();
+      console.log('members', members);
+      members["slampota"] = "slampota@usc.edu";
+      var updates = {members};
+      firebase.database().ref("/focusedEvents/event2").update(updates);
+      var attendees = Object.values([snapshot.val()]);
+      console.log(attendees);
+      return attendees;
+    });
   }
 
   render() {
@@ -30,27 +44,19 @@ class EventList extends React.Component {
       <div>
         {events.map((e, i) =>
           <EventItem
-            key={i}
+            key={e.id}
             topic={e.topic}
             startTime={e.startTime}
             endTime={e.endTime}
+            onClick={this.registerForEvent}
+            id={e.id}
           />
         )}
       </div>
     )
   }
 
-  registerForEvent(uid, eid) {
-  var members;
-  let ref = this.props.firebase.database().ref("/focusedEvents/" + eid + "/members");
-  ref.on("value", function(snapshot) {
-    members = snapshot.val();
-    members[uid] = uid;
-    var updates = {members};
-    this.props.firebase.database().ref('/focusedEvents/' + eid).update(updates);
-  });
-}
-
+  
 }
 
 export default EventList;

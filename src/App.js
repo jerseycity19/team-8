@@ -46,6 +46,7 @@ class App extends React.Component {
     const { isLoggedIn } = this.state;
     return (
       <div className="App">
+        <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">
           Global Nomads Group connects youth from around

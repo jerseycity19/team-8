@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 const buttonTwo = {
-  backgroundColor: '#627BAF',
+  backgroundColor: '#514684',
   background: 'groove',
   fontColor: 'black',
 };

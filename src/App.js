@@ -7,7 +7,7 @@ import EventList from './EventList';
 import './EventItem.js';
 
 const buttonTwo = {
-  backgroundColor: '#627BAF',
+  backgroundColor: '#514684',
   background: 'groove',
   fontColor: 'black',
 };

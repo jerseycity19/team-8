@@ -39,17 +39,9 @@ class App extends React.Component {
   handleOnClick() {
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithRedirect(provider);
-    firebase.auth().getRedirectResult().then(function(result) {
-      if (result.credential) {
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        var token = result.credential.accessToken;
-        // ...
-      }
-      // The signed-in user info.
-      var user = result.user;
-      console.log("user: " + user);
-    })
   }
+
+
 
   eventOnClick() {
     // TO BE CODED ONCE EVENTS ARE MADE
@@ -58,6 +50,20 @@ class App extends React.Component {
 
 
   render() {
+    firebase.auth().getRedirectResult().then(function(result) {
+      if (result.credential) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+
+        var users;
+        let ref = firebase.database().ref("/users");
+        ref.on("value", function(snapshot) {
+          users = snapshot.val();
+          users[user.email] = user.email;
+          var updates = {users};
+          firebase.database().ref().update(updates);
+        });
+      };
     const { isLoggedIn } = this.state;
     return (
       <div className="App">

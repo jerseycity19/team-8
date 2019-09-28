@@ -4,7 +4,8 @@ import "firebase/auth";
 import './App.css';
 import './index.css';
 import EventList from './EventList';
-import Particles from 'react-particles-js';
+// import Particles from 'react-particles-js';
+
 
 const buttonTwo = {
   backgroundColor: '#627BAF',
@@ -52,20 +53,23 @@ class App extends React.Component {
 
   render() {
     const { isLoggedIn } = this.state;
-    const particleOpt = {
-      particles: {
-        number: {
-          value: 150,
-          density: {
-            enable: true,
-            value_area: 800
+    // const particleOpt = {
+    //   particles: {
+    //     number: {
+    //       value: 150,
+    //       density: {
+    //         enable: true,
+    //         value_area: 800
   
-          }
-        }
-      }
-    }
+    //       }
+    //     }
+    //   }
+    // }
     return (
       <div className="App">
+        {/* <Particles
+            params={particleOpt}
+        /> */}
         <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">

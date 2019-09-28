@@ -3,8 +3,14 @@ import firebase from "./firebaseApp";
 import "firebase/auth";
 import './App.css';
 import './index.css';
-
 import EventList from './EventList';
+
+const buttonTwo = {
+  backgroundColor: 'lavender',
+  background: 'groove',
+  fontColor: 'black'
+
+};
 
 class App extends React.Component {
   constructor(props) {
@@ -39,15 +45,46 @@ class App extends React.Component {
     firebase.auth().signInWithRedirect(provider);
   }
 
+  eventOnClick() {
+    // TO BE CODED ONCE EVENTS ARE MADE
+  }
+
+
   render() {
     const { isLoggedIn } = this.state;
     return (
       <div className="App">
+        <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">
           Global Nomads Group connects youth from around
           the world to engage across lines of difference.
         </h2>
+        <button onClick={this.handleOnClick}>
+          Log in
+        </button>
+        <h3>
+          Upcoming and Current Tables:
+        </h3>
+        <button style={buttonTwo} onClick={this.eventOnClick}>
+          Table Talk September 29th 3pm <p></p> RSVP now!
+        </button>
+        <button style={buttonTwo} onClick={this.eventOnClick}>
+          Table Talk September 30th 11am <p></p> TOPIC: <p></p> Climate Change Around the World
+        </button>
+        <h4>
+          Topic-Specific Tables:
+        </h4>
+        <button style={buttonTwo} onClick={this.eventOnClick}>
+          Table Talk October 11th 11am
+          <p></p> TOPIC: <p></p> Giving to the Community
+        </button>
+        <h5>
+          Free Tables (No Set Topic):
+        </h5>
+        <h6>
+          Create Your Own Table!
+        </h6>
         {isLoggedIn ?
           (<EventList firebase={firebase} />)
         : (

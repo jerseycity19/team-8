@@ -61,15 +61,6 @@ class App extends React.Component {
     const { isLoggedIn } = this.state;
     return (
       <div className="App">
-        {isLoggedIn ?
-          (
-          <>
-          <EventList firebase={firebase} />
-          <img src="/images/1.jpg" alt=""/>
-        {/* <Particles
-            params={particleOpt}
-        /> */}
-        <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">
           Global Nomads Group connects youth from around
@@ -109,9 +100,6 @@ class App extends React.Component {
         <h6>
           Create Your Own Table!
         </h6>
-          </>
-          )
-        : (
           <>
             <Verify />
             <button onClick={this.handleOnClick}>

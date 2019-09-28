@@ -27,18 +27,20 @@ class App extends React.Component {
   }
   render() {
     return (
-      <h1 style={{
-        backgroundColor: 'cornflowerblue',
-        height: '50px',
-        boxSizing: "border-box"
-      }} className="App">
-        global nomads group
+      <h1 className="App">
+        GLOBAL NOMADS GROUP
+        <h2 
+        className="missionStatement">
+        Global Nomads Group connects youth from around 
+        the world to engage across lines of difference.
+        </h2>
       <div>
         <button onClick={this.handleOnClick}>
           Log in
         </button>
       </div>
       </h1>
+     
     );
   }
 }

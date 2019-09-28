@@ -51,11 +51,16 @@ h2 {
 
 ul{
   width: 20%;
-  border: groove purple;
+  border: groove #514684;
+  background-color: purple;
+  color: whitesmoke;
   list-style-type: none;
   text-align: left;
   font-family: monospace;
+  border-radius: 3px;
+  box-shadow: 2px;
   margin: 15px;
+  padding-left: -5px;
   
 }
 

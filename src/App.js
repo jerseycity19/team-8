@@ -7,6 +7,8 @@ import EventList from './EventList';
 import { Button } from 'semantic-ui-react';
 import Verify from './Verify';
 
+// <EventList firebase={firebase} />
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -70,7 +72,7 @@ class App extends React.Component {
         {isLoggedIn ?
           (
             <>
-              <EventList firebase={firebase} />
+            
               <ul> Your Future Tables:
                 <li>Table Talk September 30th 11 am
                   <p>

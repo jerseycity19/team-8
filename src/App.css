@@ -1,7 +1,9 @@
 
 .App {
   text-align: center;
-  border: mediumblue groove;
+  border: floralwhite groove;
+  width: 100%;
+  height: 100%;
 }
 
 .missionStatement {
@@ -29,4 +31,3 @@
 .App-link {
   color: blue;
 }
-

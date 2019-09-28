@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 button {
   background: silver groove;
   border: 1px;
@@ -21,6 +22,7 @@ button {
   line-height: 10px;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -28,15 +30,64 @@ code {
 
 /* header */
 h1 {
-  color: darkblue;
+  color: cornflowerblue;
   background: groove;
-  background-color: cornflowerblue;
-  margin: 15px;
-  height: 70px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  margin: 15;
+  height: 70;
   font-family: bookman old style;
+  padding: 15px;
+  margin-bottom: 5;
+  margin: 2.5%;
 }
 
 h2 {
   font-size: 10px;
-  padding: -20px;
+  margin-top: -2%;
+  background: groove;
+
+}
+
+h3 {
+  border: cornflowerblue groove;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 15px;
+  background: groove;
+  background-color:whitesmoke;
+  margin: 2.5%;
+}
+
+h4 {
+  border: cornflowerblue groove;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 15px;
+  background: groove;
+  background-color: whitesmoke;
+  margin: 2.5%;
+
+}
+
+h5 {
+  border: cornflowerblue groove;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 15px;
+  background: groove;
+  background-color: whitesmoke;
+  margin: 2.5%;
+
+}
+
+h6 {
+  border: cornflowerblue groove;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 15px;
+  background: groove;
+  background-color: whitesmoke;
+  margin: 2.5%;
+
 }

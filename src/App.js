@@ -32,7 +32,6 @@ class App extends React.Component {
         </button>
       </div>
       </h1>
-     
     );
   }
 }

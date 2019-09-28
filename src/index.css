@@ -28,9 +28,10 @@ code {
 
 /* header */
 h1 {
-  color: darkblue;
+  color: cornflowerblue;
   background: groove;
-  background-color: cornflowerblue;
+  border-radius: 5px;
+  background-color: whitesmoke;
   margin: 15px;
   height: 70px;
   font-family: bookman old style;

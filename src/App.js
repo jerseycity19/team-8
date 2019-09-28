@@ -40,6 +40,16 @@ class App extends React.Component {
   handleOnClick() {
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithRedirect(provider);
+    firebase.auth().getRedirectResult().then(function(result) {
+      if (result.credential) {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        var token = result.credential.accessToken;
+        // ...
+      }
+      // The signed-in user info.
+      var user = result.user;
+      console.log("user: " + user);
+    })
   }
 
   eventOnClick() {
@@ -61,6 +71,8 @@ class App extends React.Component {
         <button class="ui button" onClick={this.handleOnClick}>
           Log in
         </button>
+        <ul> Future RSVP'd Tables: <p></p><li>Table Talk September 30th 11 am <p>Climate Change</p></li><li>Table Talk October 22th 3pm <p>Gender Norms</p></li>
+        </ul>
         <h3>
           Upcoming and Current Tables:
         </h3>
@@ -73,8 +85,8 @@ class App extends React.Component {
           Topic-Specific Tables:
         </h4>
         <button class="ui purple button">{this.eventOnClick}
-          Table Talk October 11th 11am
-          <p></p> TOPIC: <p></p> Giving to the Community
+          Table Talk <p></p> October 11th 11am
+          <p></p> <p></p> Giving to the Community
         </button>
         <h5>
           Free Tables (No Set Topic):

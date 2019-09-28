@@ -31,12 +31,11 @@ code {
 
 /* header */
 h1 {
-  color: #466890;
+  color: #514684;
   background: groove;
   border-radius: 4px;
-  background-color: whitesmoke;
   margin: 15;
-  height: 70;
+  height: 7;
   font-family: bookman old style;
   padding: 15px;
   margin-bottom: 5;
@@ -48,48 +47,49 @@ h2 {
   margin-top: -2%;
   background: groove;
 
+
 }
 
 h3 {
-  border:#466890 groove;
+  border:#514684 groove;
   padding: 5px;
   border-radius: 4px;
   font-size: 15px;
   background: groove;
-  background-color: #8AA2C1;
+  background-color: #978AD1;
   margin: 2.5%;
 }
 
 h4 {
-  border:#466890 groove;
+  border:#514684 groove;
   padding: 5px;
   border-radius: 4px;
   font-size: 15px;
   background: groove;
-  background-color: #8AA2C1;
+  background-color: #978AD1;
   margin: 2.5%;
 
 }
 
 h5 {
-  border:#466890 groove;
+  border:#514684 groove;
   padding: 5px;
   border-radius: 4px;
   font-size: 15px;
   background: groove;
-  background-color: #8AA2C1;
+  background-color: #978AD1;
   margin: 2.5%;
 
 }
 
 h6 {
-  border:#466890 groove;
+  border:#514684 groove;
   padding: 5px;
   border-radius: 4px;
   font-size: 15px;
   background: groove;
-  background-color: #8AA2C1;
-  margin: 2.5%;
+  background-color: #978AD1;
+  margin: 10%;
 
 }
 img {

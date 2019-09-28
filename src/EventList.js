@@ -47,7 +47,7 @@ class EventList extends React.Component {
             onClick={this.registerForEvent}
             id={e.id}
           />
-        )}
+        )}}
       </div>
     )
   }

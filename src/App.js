@@ -19,20 +19,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1 className="App">
-        GLOBAL NOMADS GROUP
-        <h2 
-        className="missionStatement">
-        Global Nomads Group connects youth from around 
-        the world to engage across lines of difference.
+      <div className="App">
+        <h1>GLOBAL NOMADS GROUP</h1>
+        <h2 className="missionStatement">
+          Global Nomads Group connects youth from around
+          the world to engage across lines of difference.
         </h2>
-      <div>
-        <button onClick={this.handleOnClick}>
-          Log in
-        </button>
+        <div>
+          <button onClick={this.handleOnClick}>
+            Log in
+          </button>
+        </div>
       </div>
-      </h1>
-     
+
     );
   }
 }

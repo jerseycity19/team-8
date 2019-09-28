@@ -1,5 +1,6 @@
-import firebase from './firebase';
+// import firebase from './firebase';
 import React from 'react';
+import { EventItem } from './EventItem';
 
 class EventList extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class EventList extends React.Component {
   }
 
   getEvents() {
-    let eventref = firebase.database().ref("focusedEvents");
+    let eventref = this.props.firebase.database().ref("focusedEvents");
     eventref.on("value", function(snapshot) {
       return snapshot.val();
     });
@@ -26,7 +27,7 @@ class EventList extends React.Component {
     return(
       <div>
         {this.state.events.map(e =>
-          <Event
+          <EventItem
             topic={e.topic}
             startTime={e.startTime}
             endTime={e.endTime}

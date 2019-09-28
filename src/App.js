@@ -22,12 +22,14 @@ class App extends React.Component {
     firebase.auth().getRedirectResult().then(function(result) {
     if (result.credential) {
       let token = result.credential.accessToken;
+      if(token) {
+        _this.setState({
+          user,
+          isLoggedIn: true
+        });
+      }
     }
     let user = result.user;
-    _this.setState({
-      user,
-      isLoggedIn: true
-    });
     }).catch(function(error) {
       let errorCode = error.code;
       let errorMessage = error.message;
@@ -54,7 +56,7 @@ class App extends React.Component {
   eventOnClick() {
     // TO BE CODED ONCE EVENTS ARE MADE
   }
-  
+
 
 
   render() {
@@ -66,16 +68,13 @@ class App extends React.Component {
           <>
           <EventList firebase={firebase} />
           <img src="/images/1.jpg" alt=""/>
-        {/* <Particles
-            params={particleOpt}
-        /> */}
         <img src="/images/1.jpg" alt=""/>
         <h1>GLOBAL NOMADS GROUP</h1>
         <h2 className="missionStatement">
           Global Nomads Group connects youth from around
           the world to engage across lines of difference.
         </h2>
-        <button class="ui button" onClick={this.handleOnClick}>
+        <button className="ui button" onClick={this.handleOnClick}>
           Log in
         </button>
         <ul> Future RSVP'd Tables: <p></p><li>Table Talk September 30th 11 am <p>Climate Change</p></li><li>Table Talk October 22th 3pm <p>Gender Norms</p></li>
@@ -83,15 +82,15 @@ class App extends React.Component {
         <h3>
           Upcoming and Current Tables:
         </h3>
-        <button class="ui purple button">{this.eventOnClick} Table Talk<p></p>September 28th 2pm <p></p>  <p>Free Table</p>
+        <button className="ui purple button" onClick={this.eventOnClick}>Table Talk<p></p>September 28th 2pm <p></p>  <p>Free Table</p>
         </button>
-        <button class="ui purple button">{this.eventOnClick}
+        <button className="ui purple button" onClick={this.eventOnClick}>
           Table Talk <p></p> September 30th 11am <p></p> <p></p> Climate Change
         </button>
         <h4>
           Topic-Specific Tables:
         </h4>
-        <button class="ui purple button">{this.eventOnClick}
+        <button className="ui purple button" onClick={this.eventOnClick}>
           Table Talk <p></p> October 11th 11am
           <p></p> <p></p> Giving to the Community
         </button>
